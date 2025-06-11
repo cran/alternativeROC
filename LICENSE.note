@@ -1,0 +1,6 @@
+The alternativeROC package as a whole is distributed under GNU GPL-3 license. The alternativeROC package includes other open source software components. The following is a list of these components:
+
+* alternativeROC (written by package authors)
+* pROC (deLong algorithm): GPL (>=3)
+
+You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.

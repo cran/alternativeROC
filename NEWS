@@ -1,0 +1,25 @@
+alternativeROC v0.0.12
+=====================
+
+* Add argument 'fun' to function rocperf
+
+alternativeROC v0.0.11
+=====================
+
+* Add argument 'median' to function rocperf
+* Add software requirements to README file
+
+alternativeROC v0.0.10
+=====================
+
+* Add arguments to rocthreshold
+
+alternativeROC v0.0.9
+=====================
+
+* Add function rocthreshold
+
+alternativeROC v0.0.8
+=====================
+
+* Ensure compatibility with R developer requirements

@@ -1,0 +1,70 @@
+Package: alternativeROC
+Type: Package
+Title: Alternative and Fast ROC Analysis
+Version: 0.0.12
+Date: 2025-06-04
+Authors@R: c(
+  person(given = "Gregoire", family = "Thomas", 
+    role = c("aut", "cre"),
+    email = "gregoire.thomas@SQU4RE.com", 
+    comment = c(ORCID = "0000-0002-6247-9438")),
+  person(given = "Robin", family = "Tuytten", 
+    role = "ctb",
+    email = "robin.tuytten@metabolomicdiagnostics.com", 
+    comment = c(ORCID = "0000-0002-8734-7335")),
+  person(given = "Jef", family = "Moerman", role = "ctb"),
+  person("Xavier", "Robin", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included"),
+  person("Natacha", "Turck", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included"),
+  person("Alexandre", "Hainard", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included"),
+  person("Natalia", "Tiberti", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included"),
+  person("Frédérique", "Lisacek", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included"),
+  person("Jean-Charles", "Sanchez", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included"),
+  person("Markus", "Müller", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included"),
+  person("Stefan", "Siegert", role = "cph",
+         comment = "Co-author of included pROC library from which the deLong code was included")
+  )
+Description: Alternative and fast algorithms for the analysis of receiver operating 
+  characteristics curves (ROC curves) as described in Thomas et al. (2017) 
+  <doi:10.1186/s41512-017-0017-y> and Thomas et al. (2023) <doi:10.1016/j.ajogmf.2023.101110>.
+Depends: R (>= 4.0.0), stats,utils, graphics, pROC, plyr, sn, Hmisc
+Suggests: roxygen2 (>= 3.1.0), testthat
+Imports: Rcpp (>= 1.0.9)
+LinkingTo: Rcpp
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.3.2
+URL: https://bitbucket.org/SQ4/alternativeROC
+ByteCompile: true
+Repository: CRAN
+BugReports: https://bitbucket.org/SQ4/alternativeROC/issues
+NeedsCompilation: yes
+Packaged: 2025-06-07 10:37:37 UTC; GregoireThomas
+Author: Gregoire Thomas [aut, cre] (ORCID:
+    <https://orcid.org/0000-0002-6247-9438>),
+  Robin Tuytten [ctb] (ORCID: <https://orcid.org/0000-0002-8734-7335>),
+  Jef Moerman [ctb],
+  Xavier Robin [cph] (Co-author of included pROC library from which the
+    deLong code was included),
+  Natacha Turck [cph] (Co-author of included pROC library from which the
+    deLong code was included),
+  Alexandre Hainard [cph] (Co-author of included pROC library from which
+    the deLong code was included),
+  Natalia Tiberti [cph] (Co-author of included pROC library from which
+    the deLong code was included),
+  Frédérique Lisacek [cph] (Co-author of included pROC library from which
+    the deLong code was included),
+  Jean-Charles Sanchez [cph] (Co-author of included pROC library from
+    which the deLong code was included),
+  Markus Müller [cph] (Co-author of included pROC library from which the
+    deLong code was included),
+  Stefan Siegert [cph] (Co-author of included pROC library from which the
+    deLong code was included)
+Maintainer: Gregoire Thomas <gregoire.thomas@SQU4RE.com>
+Date/Publication: 2025-06-11 13:00:17 UTC
