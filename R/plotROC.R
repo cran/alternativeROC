@@ -87,8 +87,6 @@ plotROC <- function (x, annotate = FALSE, col.diagonal = "#00000080",
                      col.ci="#dd0000",lwd.ci=lwd,len.ci=.1,
                      boot.n=1e3,conf.level=.95,
                      ...) {
-  oldpar <- par(no.readonly = TRUE)
-  on.exit(par(oldpar))
   ## ======
   quantiles <- (1-conf.level)/2*c(1,0,-1)+c(0,.5,1)
   if(is.na(boot.n)||(boot.n<2)) boot.n <- NULL
@@ -125,6 +123,7 @@ plotROC <- function (x, annotate = FALSE, col.diagonal = "#00000080",
     graphics::lines(0:1,s,col=col.pvs,lwd=1,lty="solid")
   }
   olend <- graphics::par()$lend
+  on.exit(graphics::par(lend = olend))
   graphics::par(lend = 0)
   graphics::segments(0:5/5, rep(0, 6), 0:5/5, rep(1, 6), col = "grey",
                      lty = "dotted", lwd = lwd.diagonal)

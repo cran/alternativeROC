@@ -19,32 +19,6 @@
 ## ============================================================================
 
 ## ============================================================================
-#' p[AUC=0.5]
-#' 
-#' p[AUC=0.5] using DeLong's methods (DeLong et al. 1988).
-#'
-#' @inheritParams alternativeROC-common-args
-#' @param ref Reference AUC. Default 0.5.  
-#' 
-#' @return p value. 
-#'
-#' @export 
-#'
-p.auc <- function(roc,ref=.5) {
-  n <- length(roc$controls)
-  m <- length(roc$cases)
-  if(m<=1||n<=1) return(NA)
-  V <- delongPlacements(roc)
-  SX <- sum((V$X-V$theta)*(V$X-V$theta))/(m-1)
-  SY <- sum((V$Y-V$theta)*(V$Y-V$theta))/(n-1)
-  S <- SX/m+SY/n
-  p <- max(0,min(1,pnorm(ref,mean=V$theta,sd=sqrt(S))))
-  p <- min(p,1-p)*2
-  return(p)
-}
-## ============================================================================
-
-## ============================================================================
 #' ROC curve performances
 #' 
 #' Range of statistics associated with a ROC curve with confidence interval 
@@ -246,7 +220,7 @@ rocperf <- function(x,y,
           cases <- ro$cases[wca]
           ## ===
           bm[iboot,"check"] <- sum(wco^.5)-sum(wca^.5)
-          thresholds <- rocutilsthresholds(c(cases, controls),direction=ro$direction)
+          thresholds <- rocthresholds(c(cases, controls))
           perfs <- ro$fun.sesp(thresholds=thresholds, controls=controls,
                                cases=cases, direction=ro$direction)
           ## ===

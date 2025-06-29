@@ -22,14 +22,8 @@ Other contributors:
 \itemize{
   \item Robin Tuytten \email{robin.tuytten@metabolomicdiagnostics.com} (\href{https://orcid.org/0000-0002-8734-7335}{ORCID}) [contributor]
   \item Jef Moerman [contributor]
-  \item Xavier Robin (Co-author of included pROC library from which the deLong code was included) [copyright holder]
-  \item Natacha Turck (Co-author of included pROC library from which the deLong code was included) [copyright holder]
-  \item Alexandre Hainard (Co-author of included pROC library from which the deLong code was included) [copyright holder]
-  \item Natalia Tiberti (Co-author of included pROC library from which the deLong code was included) [copyright holder]
-  \item Frédérique Lisacek (Co-author of included pROC library from which the deLong code was included) [copyright holder]
-  \item Jean-Charles Sanchez (Co-author of included pROC library from which the deLong code was included) [copyright holder]
-  \item Markus Müller (Co-author of included pROC library from which the deLong code was included) [copyright holder]
-  \item Stefan Siegert (Co-author of included pROC library from which the deLong code was included) [copyright holder]
+  \item Xavier Robin (Co-author of delong.cpp from package pROC) [copyright holder]
+  \item Stefan Siegert (Co-author of delong.cpp from package pROC) [copyright holder]
 }
 
 }

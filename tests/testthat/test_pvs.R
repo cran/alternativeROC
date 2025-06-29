@@ -6,7 +6,7 @@ test_that("typical workflow",{
   ppv <- .40;NPV <- .98;prevalence <- .05;n <- 1e2;pow <- 2
   x <- c(stats::rnorm(n),stats::rnorm(n)^pow)
   y <- rep(0:1,each=n)
-  roc <- pROC::roc(y,x)
+  roc <- pROC::roc(y,x,quiet=TRUE)
   graphics::boxplot(split(x,y))
   plotROC(roc,prevalence=prevalence,ppv=ppv,npv=NPV)
   
@@ -26,6 +26,5 @@ test_that("typical workflow",{
   graphics::abline(v=res$sp,col="blue",lty="dotted")
   graphics::lines(pf$specificity,pf$npv,col="blue",lty="dashed")
   graphics::lines(pf$ppv,pf$sensitivity,col="blue",lty="dashed")
-  ## ========================================================
   ## ========================================================
 })

@@ -40,8 +40,6 @@
 #' 
 #' If the ROC curve is not provided, it will be computed from the predictor and outcome.
 #'
-#' @importFrom pROC roc
-#' 
 #' @export 
 #'
 rocthreshold <- function(x,y,cut,input,prevalence=NULL,annotate=FALSE) {

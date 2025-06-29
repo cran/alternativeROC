@@ -45,7 +45,7 @@ cippv <- function(roc,ppv,prevalence,boot.n=2000,quantiles=c(0.5,.025,.975),...)
 stratifiedcippv <- function (roc,ppv,prevalence,FUN=base::sample,...) {
   controls <- FUN(roc$controls,...)
   cases <- FUN(roc$cases,...)
-  thresholds <- rocutilsthresholds(c(cases, controls))
+  thresholds <- rocthresholds(c(cases, controls))
   perfs <- roc$fun.sesp(thresholds = thresholds, controls = controls,
                         cases = cases, direction = roc$direction)
   p <- perfs$se*prevalence/(perfs$se*prevalence+(1-perfs$sp)*(1-prevalence))
@@ -80,7 +80,7 @@ cinpv <- function(roc,npv,prevalence,boot.n,quantiles=c(0.5,.025,.975),...)
 stratifiedcinpv <- function (roc,npv,prevalence,FUN=base::sample,...) {
   controls <- FUN(roc$controls,...)
   cases <- FUN(roc$cases, ...)
-  thresholds <- rocutilsthresholds(c(cases, controls))
+  thresholds <- rocthresholds(c(cases, controls))
   perfs <- roc$fun.sesp(thresholds = thresholds, controls = controls,
                         cases = cases, direction = roc$direction)
   n <- perfs$sp*(1-prevalence)/((1-perfs$se)*prevalence+perfs$sp*(1-prevalence))

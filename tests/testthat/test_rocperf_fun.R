@@ -15,12 +15,14 @@ test_that("rocperf_fun",{
     c(funauc=ro$auc)
   }
   ## =========================================================
-  set.seed(1)
-  n <- 123
-  y <- runif(n)<.5
-  x <- rnorm(n)+y*1
-  ans <- rocperf(x,y,fun=fu)
-  testthat::expect_true(abs(ans$AUC-ans$funauc)<1e-2)
+  for(seed in 1:20) {
+    set.seed(seed)
+    n <- 123
+    y <- runif(n)<.5
+    x <- rnorm(n)+y*1
+    ans <- rocperf(x,y,fun=fu)
+    testthat::expect_true(abs(ans$AUC-ans$funauc)<1e-2)
+  }
   ## ========================================================
 })
 
