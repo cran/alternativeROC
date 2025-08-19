@@ -1,8 +1,8 @@
 Package: alternativeROC
 Type: Package
 Title: Alternative and Fast ROC Analysis
-Version: 1.0.0
-Date: 2025-06-27
+Version: 1.0.1
+Date: 2025-08-03
 Authors@R: c(
   person(given = "Gregoire", family = "Thomas", 
     role = c("aut", "cre"),
@@ -33,7 +33,7 @@ ByteCompile: true
 Repository: CRAN
 BugReports: https://bitbucket.org/SQ4/alternativeROC/issues
 NeedsCompilation: yes
-Packaged: 2025-06-29 06:28:32 UTC; GregoireThomas
+Packaged: 2025-08-03 19:31:46 UTC; GregoireThomas
 Author: Gregoire Thomas [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-6247-9438>),
   Robin Tuytten [ctb] (ORCID: <https://orcid.org/0000-0002-8734-7335>),
@@ -41,4 +41,4 @@ Author: Gregoire Thomas [aut, cre] (ORCID:
   Xavier Robin [cph] (Co-author of delong.cpp from package pROC),
   Stefan Siegert [cph] (Co-author of delong.cpp from package pROC)
 Maintainer: Gregoire Thomas <gregoire.thomas@SQU4RE.com>
-Date/Publication: 2025-06-29 06:50:02 UTC
+Date/Publication: 2025-08-19 13:30:02 UTC

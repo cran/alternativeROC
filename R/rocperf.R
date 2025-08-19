@@ -220,9 +220,7 @@ rocperf <- function(x,y,
           cases <- ro$cases[wca]
           ## ===
           bm[iboot,"check"] <- sum(wco^.5)-sum(wca^.5)
-          thresholds <- rocthresholds(c(cases, controls))
-          perfs <- ro$fun.sesp(thresholds=thresholds, controls=controls,
-                               cases=cases, direction=ro$direction)
+          perfs <- rocsesp(controls=controls,cases=cases,decreasing=ro$direction=="<")
           ## ===
           for(cutoff in sensitivities) {
             if(perfs$se[1]>.5) w <- unique(c(min(which(perfs$se <= cutoff)), max(which(perfs$se >= cutoff)))) # decrease
@@ -247,7 +245,7 @@ rocperf <- function(x,y,
           }
           ## ===
           if(!is.null(fun)) {
-            vfun <- unlist(fun(controls,cases,thresholds,perfs$se,perfs$sp,...))
+            vfun <- unlist(fun(controls,cases,perfs$th,perfs$se,perfs$sp,...))
             if(!is.numeric(vfun)) {
               stop("fun must return a named numeric vector")
             }

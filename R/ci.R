@@ -45,9 +45,7 @@ cippv <- function(roc,ppv,prevalence,boot.n=2000,quantiles=c(0.5,.025,.975),...)
 stratifiedcippv <- function (roc,ppv,prevalence,FUN=base::sample,...) {
   controls <- FUN(roc$controls,...)
   cases <- FUN(roc$cases,...)
-  thresholds <- rocthresholds(c(cases, controls))
-  perfs <- roc$fun.sesp(thresholds = thresholds, controls = controls,
-                        cases = cases, direction = roc$direction)
+  perfs <- rocsesp(controls=controls,cases=cases,decreasing=roc$direction=="<")
   p <- perfs$se*prevalence/(perfs$se*prevalence+(1-perfs$sp)*(1-prevalence))
   return(ifelse(all(p<ppv,na.rm=TRUE),0,max(perfs$se[p>ppv],na.rm=TRUE)))
 }
@@ -80,9 +78,7 @@ cinpv <- function(roc,npv,prevalence,boot.n,quantiles=c(0.5,.025,.975),...)
 stratifiedcinpv <- function (roc,npv,prevalence,FUN=base::sample,...) {
   controls <- FUN(roc$controls,...)
   cases <- FUN(roc$cases, ...)
-  thresholds <- rocthresholds(c(cases, controls))
-  perfs <- roc$fun.sesp(thresholds = thresholds, controls = controls,
-                        cases = cases, direction = roc$direction)
+  perfs <- rocsesp(controls=controls,cases=cases,decreasing=roc$direction=="<")
   n <- perfs$sp*(1-prevalence)/((1-perfs$se)*prevalence+perfs$sp*(1-prevalence))
   return(ifelse(all(n<npv,na.rm=TRUE),0,max(perfs$sp[n>npv],na.rm=TRUE)))
 }
